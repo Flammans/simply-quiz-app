@@ -1,16 +1,82 @@
-# simply_quiz_app
+# FlutterQuiz 📱🚀
 
-A new Flutter project.
+**FlutterQuiz** is a simple quiz app to test and improve your Flutter knowledge. Answer questions, learn from mistakes, and have fun!
 
-## Getting Started
+🔗 **GitHub Repository:** [FlutterQuiz on GitHub](https://github.com/Flammans/simply-quiz-app)
 
-This project is a starting point for a Flutter application.
+## 📌 Features
+- ✅ Flutter & Dart quiz questions
+- ✅ Instant answer validation
+- ✅ Simple and intuitive UI
+- ✅ Works on both **Android & iOS**
 
-A few resources to get you started if this is your first Flutter project:
+## 🚀 Getting Started
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Prerequisites
+Make sure you have the following installed:
+- **Flutter SDK** (Latest stable version) – [Download](https://flutter.dev/docs/get-started/install)
+- **Dart SDK** (Included in Flutter)
+- **Android Studio / Xcode** (For running on emulators or real devices)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 🔧 Installation & Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Flammans/simply-quiz-app.git
+   cd simply-quiz-app
+   ```  
+2. **Get dependencies:**
+   ```bash
+   flutter pub get
+   ```  
+3. **Run the app on an emulator or device:**
+    - **For Android:**
+      ```bash
+      flutter run
+      ```  
+    - **For iOS (Mac required):**
+      ```bash
+      flutter run -d ios
+      ```  
+
+## 🛠️ Build & Deployment
+
+### **Android (APK / AppBundle)**
+```bash
+flutter build apk
+flutter build appbundle
+```  
+
+### **iOS (Requires macOS & Xcode)**
+```bash
+flutter build ios
+```  
+
+️⚠ **Note for iOS:** You might need to run the following before building:
+```bash
+cd ios
+pod install
+cd ..
+```  
+
+## 📂 Project Structure
+
+```
+simply-quiz-app/
+│── lib/                  # Main application files
+│   ├── main.dart         # App entry point
+│   ├── screens/          # UI Screens
+│   ├── widgets/          # Reusable widgets
+│   ├── models/           # Data models
+│   ├── services/         # Business logic & API calls (if any)
+│── assets/               # Images & other assets
+│── pubspec.yaml          # Dependencies & configurations
+│── README.md             # This file
+```
+
+## 📝 License
+This project is licensed under the **MIT License**.
+
+---  
+
+🎯 **Start your Flutter learning journey with FlutterQuiz today!** 🚀  
