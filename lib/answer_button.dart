@@ -4,11 +4,11 @@ class AnswerButton extends StatefulWidget {
   const AnswerButton({
     super.key,
     required this.answerText,
-    required this.onTap
+    required this.onTap,
   });
 
   final String answerText;
-  final void Function () onTap;
+  final void Function() onTap;
 
   @override
   State<AnswerButton> createState() {
@@ -27,32 +27,34 @@ class _AnswerButtonState extends State<AnswerButton> {
 
   @override
   Widget build(context) {
-    return TextButton.icon(
+    return TextButton(
       onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
+      style: TextButton.styleFrom(
         foregroundColor: Colors.white,
-        textStyle: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-        ),
         padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(0),
         ),
       ),
-      icon: Icon(
-        isPressed ? Icons.check_box_outlined : Icons.check_box_outline_blank,
-        size: 30,
-        color: Colors.white,
-      ),
-      label: Text(
-        widget.answerText,
-        style: TextStyle(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Icon(
+            isPressed ? Icons.check_box_outlined : Icons.check_box_outline_blank,
+            size: 30,
             color: Colors.white,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-        ),
-      )
+          ),
+          const SizedBox(width: 10),
+          Text(
+            widget.answerText,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
