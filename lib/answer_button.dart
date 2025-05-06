@@ -12,9 +12,7 @@ class AnswerButton extends StatefulWidget {
   final void Function() onTap;
 
   @override
-  State<AnswerButton> createState() {
-    return _AnswerButtonState();
-  }
+  State<AnswerButton> createState() => _AnswerButtonState();
 }
 
 class _AnswerButtonState extends State<AnswerButton> {
@@ -29,37 +27,42 @@ class _AnswerButtonState extends State<AnswerButton> {
 
   @override
   Widget build(context) {
-    return TextButton(
-      onPressed: onPressed,
-      style: TextButton.styleFrom(
-        foregroundColor: Colors.white,
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(0),
-        ),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Icon(
-            Icons.chevron_right,
-            size: 30,
-            color: Colors.white,
-          ),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Text(
-              widget.answerText,
-              style: GoogleFonts.roboto(
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-              softWrap: true,
-              overflow: TextOverflow.visible,
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.white.withAlpha(204),
+              blurRadius: 6,
+              offset: const Offset(0, 2),
             ),
-          ),
-        ],
+          ],
+        ),
+        child: Row(
+          children: [
+            const Icon(
+              Icons.chevron_right,
+              size: 28,
+              color: Colors.black,
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Text(
+                widget.answerText,
+                style: GoogleFonts.roboto(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+                softWrap: true,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

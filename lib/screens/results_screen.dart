@@ -6,9 +6,11 @@ class ResultsScreen extends StatelessWidget {
   const ResultsScreen({
     super.key,
     required this.selectedAnswers,
+    required this.onRestart,
   });
 
   final List<String> selectedAnswers;
+  final VoidCallback onRestart;
 
   List<Map<String, Object>> getSummaryData() {
     final List<Map<String, Object>> summary = [];
@@ -124,7 +126,7 @@ class ResultsScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(12),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.05),
+                              color: Colors.white.withAlpha(38),
                               blurRadius: 6,
                               offset: const Offset(0, 2),
                             ),
@@ -170,9 +172,7 @@ class ResultsScreen extends StatelessWidget {
             child: SizedBox(
               width: double.infinity,
               child: ElevatedButton.icon(
-                onPressed: () {
-                  // TODO: restart logic
-                },
+                onPressed: onRestart,
                 icon: const Icon(
                   Icons.replay,
                   color: Colors.white,

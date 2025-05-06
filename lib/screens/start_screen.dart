@@ -21,7 +21,7 @@ class StartScreen extends StatelessWidget {
                   Image.asset(
                     'assets/images/quiz-logo.png',
                     width: 160,
-                    color: Colors.white.withOpacity(0.8),
+                    color: Colors.white.withAlpha(204),
                     colorBlendMode: BlendMode.srcATop,
                   ),
                   const SizedBox(height: 30),
@@ -39,7 +39,7 @@ class StartScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 32),
                   Text(
-                    'Test your skills.\nMaster Flutter.',
+                    'Test your skills\nMaster Flutter',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.roboto(
                       fontSize: 18,
