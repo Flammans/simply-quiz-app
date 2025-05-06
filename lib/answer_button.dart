@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AnswerButton extends StatefulWidget {
   const AnswerButton({
@@ -23,6 +24,7 @@ class _AnswerButtonState extends State<AnswerButton> {
     setState(() {
       isPressed = !isPressed;
     });
+    widget.onTap();
   }
 
   @override
@@ -40,17 +42,21 @@ class _AnswerButtonState extends State<AnswerButton> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Icon(
-            isPressed ? Icons.check_box_outlined : Icons.check_box_outline_blank,
+            Icons.chevron_right,
             size: 30,
             color: Colors.white,
           ),
           const SizedBox(width: 10),
-          Text(
-            widget.answerText,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+          Expanded(
+            child: Text(
+              widget.answerText,
+              style: GoogleFonts.roboto(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+              softWrap: true,
+              overflow: TextOverflow.visible,
             ),
           ),
         ],
