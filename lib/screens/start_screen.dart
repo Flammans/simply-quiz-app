@@ -7,51 +7,80 @@ class StartScreen extends StatelessWidget {
   final void Function() startQuiz;
 
   @override
-  Widget build(context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          Image.asset(
-            'assets/images/quiz-logo.png',
-            width: 300,
-            color: Color.fromARGB(200, 255, 255, 255),
-          ),
-          SizedBox(height: 40),
-          Text(
-            'Welcome to \n The Flutter Quiz \nLet\'s get started!',
-            textAlign: TextAlign.center,
-            style: GoogleFonts.roboto(
-              color: const Color.fromARGB(200, 255, 255, 255),
-              fontSize: 28,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(height: 40),
-          ElevatedButton.icon(
-            onPressed: startQuiz,
-            style: ElevatedButton.styleFrom(
-              foregroundColor: Colors.white,
-              backgroundColor: Colors.blue,
-              textStyle: GoogleFonts.roboto(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFFFFC107),
+      body: SafeArea(
+        child: Stack(
+          children: [
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  // App logo
+                  Image.asset(
+                    'assets/images/quiz-logo.png',
+                    width: 160,
+                    color: Colors.white.withOpacity(0.8),
+                    colorBlendMode: BlendMode.srcATop,
+                  ),
+                  const SizedBox(height: 30),
+                  // Big heading
+                  Text(
+                    'FLUTTER\nQUIZ',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.roboto(
+                      fontSize: 56,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.black,
+                      letterSpacing: 2,
+                      height: 1.1,
+                    ),
+                  ),
+                  const SizedBox(height: 32),
+                  Text(
+                    'Test your skills.\nMaster Flutter.',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.roboto(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ],
               ),
-              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
+            ),
+            Positioned(
+              bottom: 32,
+              left: 24,
+              right: 24,
+              child: ElevatedButton.icon(
+                onPressed: startQuiz,
+                icon: const Icon(
+                  Icons.play_arrow,
+                  color: Colors.white,
+                  size: 28,
+                ),
+                label: Text(
+                  'Start Quiz',
+                  style: GoogleFonts.roboto(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black,
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(vertical: 18),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                ),
               ),
             ),
-            icon: const Icon(
-              Icons.play_arrow,
-              size: 30,
-              color: Colors.white,
-            ),
-            label: Text('Start Quiz'),
-          ),
-        ],
-      )
+          ],
+        ),
+      ),
     );
   }
 }

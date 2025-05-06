@@ -166,34 +166,37 @@ class ResultsScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16),
-            child: ElevatedButton.icon(
-              onPressed: () {
-                // TODO: restart logic
-              },
-              icon: Icon(
-                Icons.replay,
-                color: Colors.white,
-                size: 28,
-                weight: 900,
-              ),
-              label: Text(
-                'Restart Quiz',
-                style: GoogleFonts.roboto(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+            child: SizedBox(
+              width: double.infinity,
+              child: ElevatedButton.icon(
+                onPressed: () {
+                  // TODO: restart logic
+                },
+                icon: const Icon(
+                  Icons.replay,
+                  color: Colors.white,
+                  size: 28,
                 ),
-              ),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.black,
-                foregroundColor: Colors.white,
-                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
+                label: Text(
+                  'Restart Quiz',
+                  style: GoogleFonts.roboto(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black,
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(vertical: 18),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
                 ),
               ),
             ),
           )
+
         ],
       ),
     );
